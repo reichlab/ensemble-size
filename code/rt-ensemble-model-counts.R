@@ -75,7 +75,7 @@ get_num_incl_models_one_date_flu <- function(date) {
   return(num_models)
 }
 
-test_dates <- seq.Date(as.Date("2022-10-17"), as.Date("2023-05-15"), by=7)
+test_dates <- seq.Date(as.Date("2022-10-17"), as.Date("2023-04-03"), by=7)
 
 num_models_by_date_flu <- data.frame(
   date = test_dates,
@@ -83,23 +83,8 @@ num_models_by_date_flu <- data.frame(
 )
 
 num_models_by_date_flu |>
-  dplyr::filter(date <= "2023-01-02") |>
   dplyr::summarize(mean_num_models = mean(num_models))
-# 22
-
-num_models_by_date_flu |>
-  dplyr::filter(date <= "2023-02-06") |>
-  dplyr::summarize(mean_num_models = mean(num_models))
-# 22.24
-
-num_models_by_date_flu |>
-  dplyr::filter(date <= "2023-03-06") |>
-  dplyr::summarize(mean_num_models = mean(num_models))
-# 21.86
-
-num_models_by_date_flu |>
-  dplyr::summarize(mean_num_models = mean(num_models))
-# 20.71
+# 21.4
 
 
 # maximum number of included models -- used in discussion
