@@ -100,3 +100,11 @@ num_models_by_date_flu |>
 num_models_by_date_flu |>
   dplyr::summarize(mean_num_models = mean(num_models))
 # 20.71
+
+
+# maximum number of included models -- used in discussion
+max(num_models_by_date_flu$num_models)
+# 25
+
+max(num_models_by_target_date_covid$num_models)
+# 26
